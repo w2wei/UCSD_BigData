@@ -26,6 +26,7 @@ logfile=stderr
 class MRWordFreqCount(MRJob):
 
     def mapper(self, _, line):
+        #for word in re.findall(WORD_RE,line):
         for word in WORD_RE.findall(line):
             logfile.write('mapper '+word.lower()+'\n')
             yield (word.lower(), 1)
