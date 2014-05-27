@@ -3,11 +3,6 @@
 """
 count the number of valid measurements. A valide record has at least 50% days with TMAX and TMIN.
 """
-import sys
-sys.path.append('/usr/lib/python2.6/dist-packages')
-from mrjob.job import MRJob
-import re
-from sys import stderr
 
 class countMeas(MRJob):
     def mapper(self, _, line):
